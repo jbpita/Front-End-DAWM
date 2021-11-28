@@ -1,0 +1,46 @@
+.barra-lateral{
+    background-color: #212529;
+    color: #f1f1f1 ;
+    max-width: 21%;
+    min-height: 100vh;
+    border-top: 5px #f1f1f1 solid;
+    padding: 0.5rem;
+
+}
+.barra-lateral a{
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+.barra-lateral .menu a{
+    display: block;
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border-bottom: 1px solid rgb(255,255,255,.1);
+
+}
+.barra-lateral .menu a:hover{
+    background-color: #262a34;
+
+}
+.barra-lateral .menu a i{
+    margin-right: 1rem;
+} 
+
+@media screen and (max-width:768px){
+    .barra-lateral{
+        min-width: 100%;
+        min-height: auto;
+    }
+    .barra-lateral .menu a span{
+        display: none;
+    }
+    .barra-lateral .menu a {
+        border-bottom: none;
+    }
+    .barra-lateral .menu a i{
+        min-width: auto;
+        margin: 0;
+    }
+}

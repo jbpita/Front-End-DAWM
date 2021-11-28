@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { AdmiModule } from './admi/admi.module';
+import { AdmiConsoleComponent } from './admi/admi-console/admi-console.component';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AdmiModule,
+    RouterModule.forRoot([
+      {path: 'admi-console' , component: AdmiConsoleComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

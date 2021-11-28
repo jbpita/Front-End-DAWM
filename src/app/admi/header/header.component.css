@@ -1,0 +1,36 @@
+
+.barra{
+    background: #212529;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #f1f1f1;
+}
+
+.dropdown-menu{
+    margin: 2.5rem;
+    background: #212529;
+    color: #f1f1f1;
+    box-shadow: 0 0 10px rgb(0,0,0,0.568);
+}
+
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+
+
+.user-menu-option i{
+    color: #f1f1f1;
+}
+
+.user-menu-option :hover{
+    
+    background: #262a34;
+    
+}
+
+.user{
+    font-size: 1.5rem;
+}
