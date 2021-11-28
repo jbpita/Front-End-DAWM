@@ -1,0 +1,18 @@
+.barra-lateral{
+    background-color: #212529;
+    color: #f1f1f1 ;
+    min-width: 25%;
+    min-height: 100vh;
+    border-top: 5px #f1f1f1 solid;
+    padding: 0.5rem;
+
+}
+
+
+@media screen and (max-width:768px){
+    .barra-lateral{
+        min-width: 100%;
+        min-height: auto;
+    }
+    
+}
