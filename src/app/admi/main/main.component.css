@@ -1,3 +1,9 @@
 .main{
     padding-top: 40px;
 }
+
+.columna{
+    padding-left: auto;
+    padding-right: auto;
+    font-weight: bold;
+}
