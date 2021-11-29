@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Optional } from '@angular/core';
+import { Component, Input, OnInit, Optional , Output ,EventEmitter} from '@angular/core';
 import { Option } from '../sidebar.option';
 
 @Component({
@@ -9,7 +9,9 @@ import { Option } from '../sidebar.option';
 
 export class SidebarOptionComponent implements OnInit {
   
-  @Input() option !: Option ;
+  @Input() option !: Option;
+  @Output() notify =  new EventEmitter();
+
   constructor() {console.log(this.option) }
 
   ngOnInit(): void {

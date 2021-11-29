@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder , FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-form-producto',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormProductoComponent implements OnInit {
 
-  constructor() { }
+  //checkoutForm: FormGroup;
+
+  
+
+  constructor(
+    private formBuilder: FormBuilder,
+  ) {
+     
+  }
 
   ngOnInit(): void {
   }
