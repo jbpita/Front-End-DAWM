@@ -1,4 +1,9 @@
-<a class="option-admi  btn btn-dark text-start" type="botton" (click)="notify.emit()">
+<a 
+    class="option-admi  btn btn-dark text-start" 
+    type="botton" 
+    (click)="notify.emit()"
+    [routerLink] = "[this.option.path]"
+>
     <i class={{this.option.icon}}></i>
     <span>{{this.option.name}}</span>
 </a>

@@ -1,9 +1,12 @@
 .main{
     padding-top: 40px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .columna{
-    padding-left: auto;
-    padding-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: auto;
     font-weight: bold;
 }

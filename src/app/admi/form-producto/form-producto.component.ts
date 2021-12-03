@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder , FormGroup} from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-form-producto',
@@ -9,8 +9,16 @@ import { FormBuilder , FormGroup} from '@angular/forms';
 export class FormProductoComponent implements OnInit {
 
   //checkoutForm: FormGroup;
+  producto = {
+    name: '',
+    description: '',
+    marca:'',
+    precio: 0,
+    image: ''
+  };
 
-  
+  //checkoutForm = this.formBuilder.group();
+
 
   constructor(
     private formBuilder: FormBuilder,
