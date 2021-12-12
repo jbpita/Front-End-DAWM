@@ -13,6 +13,7 @@ import { StadisticComponent } from './stadistic/stadistic.component';
 import { FormMarcaComponent } from './form-marca/form-marca.component';
 import { GraphicStadisticComponent } from './graphic-stadistic/graphic-stadistic.component';
 import { UserComponent } from './user/user.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -39,6 +40,7 @@ import { UserComponent } from './user/user.component';
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   exports: [
     AdmiConsoleComponent,
+    SharedModule
   ]
 })
 export class AdmiModule { }

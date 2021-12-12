@@ -10,25 +10,22 @@ import { FormProductoComponent } from './admi/form-producto/form-producto.compon
 import { StadisticComponent } from './admi/stadistic/stadistic.component';
 import { FormMarcaComponent } from './admi/form-marca/form-marca.component';
 import { UserComponent } from './admi/user/user.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     AdmiModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule,
     GoogleChartsModule,
-    RouterModule.forRoot([
-      {path: 'admi-console' , component: AdmiConsoleComponent, children: [
-        {path: 'form-product', component:  FormProductoComponent},
-        {path: 'form-marca', component:  FormMarcaComponent},
-        {path: 'stadistic' , component: StadisticComponent},
-        {path: 'user' , component: UserComponent}
-      ]}
-    ])
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
