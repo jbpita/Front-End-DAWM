@@ -1,0 +1,22 @@
+
+    div.ContServicio {
+      padding: 20px 0px;
+  }
+
+  .ContServicio .container div.section-header h2 {
+      color: #212529;
+  }
+
+  .ContServicio .container div.row h3 {
+      color: #0f3460;
+  }
+
+  .colored-line-small-center {
+      background: #008ed6;
+      display: block;
+      margin: auto;
+      height: 1px;
+      width: 25%;
+      z-index: 1;
+      margin-bottom: 5px;
+  }

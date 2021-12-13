@@ -1,1 +1,16 @@
-<p>insignias works!</p>
+<div class="ContServicio">
+  <div class="container">
+      <div class="section-header text-center">
+          <h2>Te ofrecemos</h2>
+      </div>
+      <div class="row text-center">
+          <div *ngFor="let o of insignias.valor "class="col-lg-3 col-md-4 col-sm-6 sec1" id="1">
+              <img src="{{o.srci}}" alt="{{o.name}}">
+                  <h3>{{o.h3i}}</h3>
+                  <div class="colored-line-small-center"></div>
+                  <p>{{o.pi}}</p>
+          </div>
+      </div>
+  </div>
+
+</div>

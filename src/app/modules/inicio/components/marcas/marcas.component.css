@@ -1,0 +1,53 @@
+.marcas {
+  background-color: #212529;
+}
+
+.marcas .container .row {
+  color: #dddddd;
+}
+
+.button {
+  position: relative;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: "";
+  background: #727171;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  width: 100%;
+  padding: 0 0 0 0;
+  color: #eeeeee;
+}
+
+div.car-banner>img {
+  width: 23%
+}
+
+
