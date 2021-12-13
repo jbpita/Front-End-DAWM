@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CarouselComponent } from './components/carousel/carousel.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+
 
 const routes: Routes = [
   {path:'',
-  component:CarouselComponent
+  component:InicioComponent
 }
 ];
 
