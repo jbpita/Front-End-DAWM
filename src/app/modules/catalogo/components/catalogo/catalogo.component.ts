@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { tap } from 'rxjs/operators';
+import { Product } from 'src/app/core/models/product-model';
+import { ShoppingCartService } from 'src/app/shared/services/shopping-cart-service.service';
 
 @Component({
   selector: 'app-catalogo',
@@ -7,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogoComponent implements OnInit {
 
-  
+  productV!: Product[]  
 
-  constructor() { }
+  constructor(private shoppingCartSvc:ShoppingCartService) { }
   informationCarousel= [{
     name: 'First slide',
     srci: './assets/img/slideBar/slide_PC01.jpg',
@@ -35,7 +38,13 @@ export class CatalogoComponent implements OnInit {
     pi: '',
     activei:""
   }]
+
   ngOnInit(): void {
+  }
+
+  addToCart(product: Product): void {
+    console.log('Add to cart', product);
+    this.shoppingCartSvc.updateCart(product);
   }
 
 }

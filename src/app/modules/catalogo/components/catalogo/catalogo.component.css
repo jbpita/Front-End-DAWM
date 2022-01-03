@@ -1,0 +1,30 @@
+.list_baterias {
+    margin-top: 2%;
+}
+div.section-header {
+    margin-bottom: 40px
+}
+
+.section-header h2 {
+    display: inline-block;
+    position: relative;
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #E81C2E;
+}
+.section-header h2::after {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 2px;
+    left: 25%;
+    bottom: -7px;
+    background: #E81C2E;
+}
+a:hover, a:active, a:focus {
+    color: #E81C2E;
+    outline: none;
+    text-decoration: none;
+}
