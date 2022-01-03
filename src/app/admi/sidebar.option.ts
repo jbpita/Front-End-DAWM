@@ -30,10 +30,4 @@ export const side_option = [
         name: "Usuario",
         path: "user"
     },
-    {
-        id: 5,
-        icon: "bi bi-chat-left-text",
-        name: "comentarios",
-        path: "comments"
-    },
 ]

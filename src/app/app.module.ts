@@ -1,4 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,6 +22,7 @@ import { UserComponent } from './admi/user/user.component';
     FormsModule,
     ReactiveFormsModule,
     GoogleChartsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: 'admi-console' , component: AdmiConsoleComponent, children: [
         {path: 'form-product', component:  FormProductoComponent},
