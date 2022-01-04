@@ -1,0 +1,35 @@
+<div class="team">
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-lg-6 col-md-6 col-12" *ngFor="let o of equipo.valor">
+            <div class="team-item">
+                <div class="team-img">
+                    <img alt="Team Image" class="img-fluid" src="{{o.srcE}}">
+                </div>
+                <div class="team-text col-md-12 col-12">
+                    <h2>
+                        {{o.h2E}}
+                    </h2>
+                    <p>
+                        {{o.pE}}
+                    </p>
+                    <div class="team-social col-md-12 col-12">
+                        <a href="{{o.facebook}}">
+                            <i class="fab fa-facebook-f">
+                                </i>
+                        </a>
+                        <a href="">
+                            <i class="fab fa-linkedin-in">
+                                </i>
+                        </a>
+                        <a href="{{o.ig}}">
+                            <i class="fab fa-instagram">
+                                </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

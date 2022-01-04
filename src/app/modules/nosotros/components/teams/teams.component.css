@@ -1,0 +1,152 @@
+.team {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 100px;
+}
+
+.team .team-item {
+    position: relative;
+    margin-bottom: 30px;
+    margin-left: 45px;
+}
+
+.team .team-img {
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    max-width: 400px;
+}
+
+.team .container .section-header h2 {
+    padding-bottom: 25px;
+    padding-top: 25px;
+    margin-bottom: 80px;
+    color: #ffffff;
+    background-color: #1E1E1E;
+}
+
+.team .team-img img {
+    width: 400px;
+    transition: .3s;
+}
+
+.team .team-item:hover img {
+    transform: scale(1.1);
+}
+
+.team .team-text {
+    position: relative;
+    width: 400px;
+    padding: 35px 30px 30px 30px;
+    text-align: center;
+    background: #1E1E1E;
+    border-radius: 0 0 5px 5px;
+    transition: .5s;
+}
+
+.team .team-item:hover .team-text {
+    background: #E81C2E;
+}
+
+.team .team-text h2 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.team .team-text p {
+    margin: 0;
+    color: #ffffff;
+}
+
+.team .team-social {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    top: -20px;
+    left: 0;
+    text-align: center;
+    font-size: 0;
+}
+
+.team .team-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 3px;
+    padding: 7px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    background: #1E1E1E;
+    border-radius: 40px;
+    transition: .5s;
+}
+
+.team .team-item:hover .team-social a {
+    background: #E81C2E;
+}
+
+.team .team-social a:hover {
+    color: #202C45;
+}
+
+.team .contact-info {
+    width: 100%;
+    margin-bottom: 45px;
+    padding: 35px 30px 10px 30px;
+    border-radius: 15px;
+    background: #202C45;
+}
+
+.team .contact-info-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+}
+
+.team .contact-info-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 50px;
+}
+
+.team .contact-info-icon i {
+    margin: 0;
+    color: #202C45;
+    font-size: 16px;
+}
+
+.team .contact-info-text {
+    padding-left: 20px;
+}
+
+.team .contact-info h2 {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.team .contact-info-text h3 {
+    margin: 0 0 5px 0;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.team .contact-info-text p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+}
