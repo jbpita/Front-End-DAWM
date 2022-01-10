@@ -38,5 +38,8 @@ export class BuscadoresComponent implements OnInit {
       tap((marcas: Marca[]) => this.marcas = marcas))
     .subscribe()
   }*/
+  presentar(){
+    console.log("hola")
+  }
 
 }

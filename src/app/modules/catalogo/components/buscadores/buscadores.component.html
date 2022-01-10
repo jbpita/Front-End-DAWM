@@ -5,8 +5,8 @@
                 <a class="tm-paging-link active">Todos los Productos</a>
             </li>
             <ng-container *ngFor="let marca of marcas">
-                <li class="tm-paging-item col-4">
-                    <a class="tm-paging-link">{{marca.nombre}}</a>
+                <li class="tm-paging-item col-4" (click)="presentar()">
+                    <a class="tm-paging-link" >{{marca.nombre}}</a>
                 </li>
             </ng-container>
             
