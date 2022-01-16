@@ -17,7 +17,7 @@ export class PresProductoComponent implements OnInit {
       tipo: 1,
       precio: 130.00,
       detalle: ["12 Voltios / 15 Placas / 82 Ah", "CCA(-18ºC) : 630 A Cap.Reserva: 182 min", "Largo 33.8 cm – Ancho 16.2 cm – Alto 24.1 cm"],
-      src: "./assets/img/tiposBaterias/Bosch/BoschS330HFE.jpg",
+      src: "",
       cantidad: 5,
       qty:0,
   },
