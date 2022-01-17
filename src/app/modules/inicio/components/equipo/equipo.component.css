@@ -1,0 +1,106 @@
+.team {
+  position: relative;
+  width: 100%;
+  padding: 25px 0 15px 0;
+  background-color: #212529;
+}
+
+.team .team-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.team .team-img {
+  position: relative;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+
+.team .container .section-header h2 {
+  padding-bottom: 10px;
+  color: white;
+}
+
+.team .team-item>.team-text {
+  background-color: white;
+}
+
+.team .team-item:hover>.team-text {
+  background-color: #E81C2E;
+}
+
+.team .container .row .team-item:hover>.team-text>h2 {
+  color: white;
+}
+
+.team .container .row .team-item>.team-text>h2 {
+  color: #0f3460;
+}
+
+.team .container .row .team-item>.team-text>p {
+  color: #212529;
+}
+
+.team .team-img img {
+  width: 100%;
+  transition: .3s;
+}
+
+.team .team-item:hover img {
+  transform: scale(1.1);
+}
+
+.team .team-text {
+  position: relative;
+  width: 100%;
+  padding: 35px 30px 30px 30px;
+  text-align: center;
+  background: #212529;
+  border-radius: 0 0 5px 5px;
+  transition: .5s;
+}
+
+.team .team-text h2 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.team .team-text p {
+  margin: 0;
+  color: #ffffff;
+}
+
+.team .team-social {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  top: -20px;
+  left: 0;
+  text-align: center;
+  font-size: 0;
+}
+
+.team .team-social a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 0 3px;
+  padding: 7px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  background: #212529;
+  border-radius: 40px;
+  transition: .5s;
+}
+
+.team .team-item:hover .team-social a {
+  background: #E81C2E;
+}
+
+.team .team-social a:hover {
+  color: #212529;
+}

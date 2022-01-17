@@ -1,0 +1,44 @@
+<div class=" row tm-gallery">
+    <div class="tm-gallery-page">
+        <div class="recent-baterie-content">
+            <div class="row catalogo_bateria" >
+                <div class="col-md-4 col-sm-6 bateria" *ngFor="let producto of productos">
+                    <div class="baterie-item wow fadeIn animated"  data-wow-duration="0.75s" style="visibility: visible;-webkit-animation-duration: 0.75s; -moz-animation-duration: 0.75s; animation-duration: 0.75s;">
+                        <div class="thumb-content">
+                            <div class="thumb-inner" >
+                                <img src={{producto.src}} alt="">
+                            </div>
+                            <div class="baterie-banner">
+                                <a>{{producto.tipo}}</a>
+                            </div>
+                        </div>
+                        <div class="down-content">
+                            <h4>{{producto.nombre}}</h4>
+                            <span>{{producto.precio}}</span>
+                            <div class="descripcion row">
+                                <p class="col-12">Características:</p>
+                                <p class="col-12">{{producto.detalle[0]}}</p>
+                                <p class="col-12">{{producto.detalle[1]}}</p>
+                                <p class="col-12">{{producto.detalle[2]}}</p>
+                            </div>
+                            <ng-container *ngIf="producto.cantidad != 0; else btndesct">
+                                <button class="button item " (click)="onClick(producto)"
+                                ><i class="bi bi-cart3"></i>
+                                   <p>Añadir al carrito</p>
+                           </button>
+                            </ng-container>
+                              <ng-template #btndesct>
+                                <button class="button item disabledbutton " (click)="onClick(producto)"
+                                     ><i class="bi bi-cart3"></i>
+                                        <p>Añadir al carrito</p>
+                                </button>
+                              </ng-template>
+                                
+                              
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

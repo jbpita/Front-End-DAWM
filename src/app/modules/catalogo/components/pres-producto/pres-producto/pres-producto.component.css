@@ -1,0 +1,188 @@
+
+div.thumb-content div.thumb-inner {
+    text-align: center;
+}
+
+
+
+/* Large devices (desktops, 992px and up) */
+
+
+
+
+
+
+
+
+
+.button {
+    position: relative;
+    border: none;
+    font-size: 28px;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button:after {
+    content: "";
+    background: #727171;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+div.baterie-banner>img {
+    width: 23%
+}
+
+.recent-baterie-content .baterie-item {
+    margin-bottom: 30px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    border-bottom: 3px solid transparent;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s
+}
+
+.recent-baterie-content .baterie-item:hover {
+    border-bottom: 3px solid #E81C2E
+}
+
+.recent-baterie-content .baterie-item .thumb-content {
+    position: relative
+}
+
+.recent-baterie-content .baterie-item .thumb-content .baterie-banner {
+    padding-left: 15px;
+}
+
+.recent-baterie-content .baterie-item .thumb-content .baterie-banner a {
+    background-color: #212529;
+    border-radius: 3px;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    display: inline-block;
+    padding: 0px 5px;
+}
+
+.recent-baterie-content .baterie-item .thumb-content .thumb-inner img {
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 77%;
+    overflow: hidden;
+    background-size: cover
+}
+
+.recent-baterie-content .baterie-item .down-content {
+    padding: 0px 20px;
+    text-align: left
+}
+
+.recent-baterie-content .baterie-item .down-content h4 {
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e1e1e
+}
+
+.recent-baterie-content .baterie-item .down-content span {
+    font-size: 15px;
+    font-weight: 900;
+    color: #0F3460;
+    margin-bottom: 0px
+}
+
+.recent-baterie-content .baterie-item .down-content ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    list-style: none
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    border-right: 3px solid #fff
+}
+
+@media (max-width:991px) {
+    .button {
+        width: 23%
+    }
+}
+
+.recent-baterie-content .baterie-item .down-content ul li:last-child {
+    border-right: none
+}
+
+.button {
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    padding: 10px 5px;
+    -webkit-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    transition: ease-out 0.5s;
+}
+
+.button:hover {
+    background-color: #212529
+}
+
+.button:hover i {
+    font-weight: 700;
+    color: #E81C2E
+}
+
+.button:hover p {
+    font-weight: 700;
+    color: #E81C2E
+}
+
+.button i {
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 100%;
+    padding-bottom: 5px;
+    font-weight: 700;
+    float: left
+}
+
+.button p {
+    margin-top: 0px;
+    margin-bottom: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #212529;
+}
+
+.disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+

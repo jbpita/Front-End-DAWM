@@ -11,15 +11,20 @@ import { FormProductoComponent } from './admi/form-producto/form-producto.compon
 import { StadisticComponent } from './admi/stadistic/stadistic.component';
 import { FormMarcaComponent } from './admi/form-marca/form-marca.component';
 import { UserComponent } from './admi/user/user.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     AdmiModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule,
     GoogleChartsModule,
     HttpClientModule,

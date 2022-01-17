@@ -1,0 +1,27 @@
+<div class="team">
+  <div class="container">
+      <div class="section-header text-center">
+          <h2>Conoce nuestro equipo</h2>
+      </div>
+      <div class="row align-items-center">
+          <div *ngFor="let o of equipo.valor" class="col-lg-3 col-md-6">
+              <div class="team-item">
+                  <div class="team-img">
+                      <img src="{{o.srcE}}" alt="Team Image" />
+                  </div>
+                  <div class="team-text">
+                      <h2>{{o.h2E}}</h2>
+                      <p>{{o.pE}}</p>
+                      <div class="team-social">
+                          <a href="{{o.facebook}}"><i class="fab fa-facebook-f"></i></a>
+                          <a href=""><i class="fab fa-linkedin-in"></i></a>
+                          <a href="{{o.ig}}"><i
+                                  class="fab fa-instagram"></i></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>

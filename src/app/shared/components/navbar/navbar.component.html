@@ -1,1 +1,29 @@
-<p>navbar works!</p>
+    <nav class="navbar navbar-expand-md navbar-dark nav-bar nav-sticky">
+        <div class="container-fluid" >
+           <img src="./assets/img/logoBaterizate.png" class="navbar-brand d-inline-block align-text-top logotipo ">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul  class="navbar-nav me-auto my-2 my-md-0 ">
+                    <li *ngFor="let opcion of mainMenu.option" class="nav-item active ">
+                        <a [routerLink]="opcion.router" class="nav-item nav-link ">{{opcion.name}}</a>
+                    </li>
+                </ul>
+                <div class="my-2 my-lg-0">
+                    <button (click)="irdireccion('InicioSesion')" type="button" class="btn btn-outline-secondary" >
+                        <a class="text-decoration-none">Iniciar Sesión</a>
+                        <i class="bi bi-person"></i>
+                    </button>
+
+                    <button type="button" (click)="irdireccion('Carrito')" class="btn btn-outline-secondary">
+                        <span id="nav-cart-count" aria-hidden="true"
+                            class="nav-cart-count nav-cart-1 nav-progressive-attribute nav-progressive-content">{{quantity}}</span>
+                        <i class="bi bi-cart4"></i>
+                        <span class="visually-hidden">Carrito</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
