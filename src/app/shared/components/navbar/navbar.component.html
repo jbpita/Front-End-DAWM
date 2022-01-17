@@ -11,11 +11,20 @@
                         <a [routerLink]="opcion.router" class="nav-item nav-link ">{{opcion.name}}</a>
                     </li>
                 </ul>
-                <div class="my-2 my-lg-0">
-                    <button (click)="irdireccion('InicioSesion')" type="button" class="btn btn-outline-secondary" >
-                        <a class="text-decoration-none">Iniciar Sesión</a>
-                        <i class="bi bi-person"></i>
-                    </button>
+        
+                <div #inicio class="my-2 my-lg-0">
+                  
+                        <button *ngIf="authSvc.isLogged | async; else inicioSe" (click)="onLogout()" type="button" class="btn btn-outline-secondary" >
+                            <a class="text-decoration-none">Sesión Iniciada</a>
+                            <i class="bi bi-person"></i>
+                        </button>
+                    <ng-template #inicioSe>
+                        <button (click)="irdireccion('InicioSesion')" type="button" class="btn btn-outline-secondary" >
+                            <a class="text-decoration-none">Iniciar Sesión</a>
+                            <i class="bi bi-person"></i>
+                        </button>
+                    </ng-template>
+                   
 
                     <button type="button" (click)="irdireccion('Carrito')" class="btn btn-outline-secondary">
                         <span id="nav-cart-count" aria-hidden="true"

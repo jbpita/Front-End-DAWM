@@ -23,7 +23,12 @@ export class InicioSesionComponent implements OnInit {
     const formValue = this.loginForm.value;
     this.authSvc.login(formValue).subscribe( (res) =>{
       if(res){
-        this.router.navigate([''])
+        if(res.role == "cliente"){
+          this.router.navigate([''])
+        }
+        else{
+          this.router.navigate(['/Admin'])
+        }
       }
     }
     )

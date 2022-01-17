@@ -13,6 +13,10 @@ const routes: Routes = [
     path:'InicioSesion',
       loadChildren:() => import('./modules/inicio-sesion/inicio-sesion.module').then( m => m.InicioSesionModule) 
   },
+  {
+    path:'Admin',
+      loadChildren:() => import('./modules/admin/admin.module').then( m => m.AdminModule) 
+  },
 ];
 
 @NgModule({

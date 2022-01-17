@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShoppingCartService } from '../../services/shopping-cart-service.service';
 import { tap } from 'rxjs/operators';
+import { AuthService } from 'src/app/modules/inicio-sesion/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +16,7 @@ export class NavbarComponent implements OnInit {
   
   quantity!: number;
 
-  constructor(private router: Router, private shoppingCartSvc: ShoppingCartService) { }
+  constructor(private router: Router, private shoppingCartSvc: ShoppingCartService,public authSvc:AuthService) { }
   ngOnInit(): void {
     
     this.mainMenu.option = [
@@ -49,6 +50,9 @@ export class NavbarComponent implements OnInit {
         tap((qty:number) => {this.quantity = qty})
       )
       .subscribe()
+  }
+  onLogout(){
+    this.authSvc.logout();
   }
 
 }

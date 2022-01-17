@@ -13,7 +13,7 @@ export class AuthService {
   private loggeIn = new BehaviorSubject<boolean>(false);
 
   constructor(private http:HttpClient) { 
-    this.checkToken()
+    this.checkToken
   }
   get isLogged(): Observable<boolean>{
     return this.loggeIn.asObservable();
@@ -32,17 +32,21 @@ export class AuthService {
   logout(): void{
     localStorage.removeItem('token');
     this.loggeIn.next(false);
+    window.location.reload();
   }
   private checkToken():void{
-     const userToken  = String(localStorage.getItem('token'));
-    const isExpires = helper.isTokenExpired(userToken);
-    console.log('isExpired-->',isExpires)
-    if(isExpires){
-      this.logout();
+    if(localStorage.getItem('token')){
+      const userToken  = String(localStorage.getItem('token'));
+      const isExpires = helper.isTokenExpired(userToken);
+      console.log('isExpired-->',isExpires)
+      if(isExpires){
+        this.logout();
+      }
+      else{
+        this.loggeIn.next(true);
+      }
     }
-    else{
-      this.loggeIn.next(true);
-    }
+    
   }
   private saveToken(token:string):void{
     localStorage.setItem('token',token)
