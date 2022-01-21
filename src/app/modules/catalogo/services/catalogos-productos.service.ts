@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CatalogosProductosService {
-  private apiURl = 'http://localhost:3000/producto';
+  private apiURl = 'http://localhost:3001/productos';
   constructor(private http: HttpClient) { }
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.apiURl);

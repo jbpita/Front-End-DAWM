@@ -9,19 +9,19 @@
                                 <img src={{producto.src}} alt="">
                             </div>
                             <div class="baterie-banner">
-                                <a>{{producto.tipo}}</a>
+                                <a>{{producto.marca.nombre}}</a>
                             </div>
                         </div>
                         <div class="down-content">
                             <h4>{{producto.nombre}}</h4>
-                            <span>{{producto.precio}}</span>
+                            <span>{{producto.precio|currency}}</span>
                             <div class="descripcion row">
                                 <p class="col-12">Características:</p>
-                                <p class="col-12">{{producto.detalle[0]}}</p>
-                                <p class="col-12">{{producto.detalle[1]}}</p>
-                                <p class="col-12">{{producto.detalle[2]}}</p>
+                                <p class="col-12">{{producto.detalles[0]}}</p>
+                                <p class="col-12">{{producto.detalles[1]}}</p>
+                                <p class="col-12">{{producto.detalles[2]}}</p>
                             </div>
-                            <ng-container *ngIf="producto.cantidad != 0; else btndesct">
+                            <ng-container *ngIf="producto.stock != 0; else btndesct">
                                 <button class="button item " (click)="onClick(producto)"
                                 ><i class="bi bi-cart3"></i>
                                    <p>Añadir al carrito</p>

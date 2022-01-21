@@ -1,11 +1,13 @@
+import { Marca } from "./marcas-model";
 
 export interface Product {
-    id: number,
+    id_producto: number,
     nombre: string,
-    tipo: number,
     precio: number,
-    detalle:  String[],
+    detalle:  String,
+    stock: number,
     src: string,
-    cantidad: number,
-    qty: number;
+    marca: Marca,
+    qty: number ;
+    detalles:String[],
 }

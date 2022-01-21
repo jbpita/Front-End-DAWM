@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MarcasService {
-  private apiURl = 'http://localhost:3000/marca';
+  private apiURl = 'http://localhost:3001/marcas';
   constructor(private http: HttpClient) { }
   
   getMarcas(): Observable<Marca[]> {

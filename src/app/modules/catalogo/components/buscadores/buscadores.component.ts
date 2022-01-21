@@ -10,36 +10,24 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./buscadores.component.css']
 })
 export class BuscadoresComponent implements OnInit {
-  marcas: Marca[] = [{
-    id:1,
-    nombre: "Bosch",
-    descripcion: "hola"
-  },{
-    id:2,
-    nombre: "Dacar",
-    descripcion: "hola"
-  },{
-    id:2,
-    nombre: "Mac",
-    descripcion: "hola"
-  }]
+  marcas: Marca[] = []
 
-  //marcas!: Marca[]
- /* constructor(private marcasServices:MarcasService) { }*/
- constructor() { }
+ constructor(private marcasServices:MarcasService) { }
   ngOnInit(): void {
-    console.log(this.marcas)
-    /*cargarmarcas()*/
+    this.cargarmarcas()
   }
-  /*
+  
   private cargarmarcas(){
     this.marcasServices.getMarcas()
     .pipe(
-      tap((marcas: Marca[]) => this.marcas = marcas))
+      tap((marcas: Marca[]) => {this.marcas = marcas
+      console.log(this.marcas)}))
     .subscribe()
-  }*/
-  presentar(){
-    console.log("hola")
+  }
+  
+  presentar(id:number){
+    console.log(id)
+            
   }
 
 }
