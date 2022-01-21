@@ -2,20 +2,15 @@
     <nav id="navproductos" class="container">
         <ul class="row" >
             <li class="tm-paging-item col-12">
-                <a class="tm-paging-link active">Todos los Productos</a>
+                <a class="tm-paging-link active" (click)="presentar($event,0)">Todos los Productos</a>
             </li>
             <ng-container *ngFor="let marca of marcas">
                 <li class="tm-paging-item col-4" >
-                    <a class="tm-paging-link" (click)="presentar(marca.id_marca)">{{marca.nombre}}</a>
+                    <a class="tm-paging-link" (click)="presentar($event,marca.id_marca)">{{marca.nombre}}</a>
                 </li>
             </ng-container>
             
         </ul>
     </nav>
-    <div class="row row-cols-1 row-cols-md-12 g-4 mx-2 my-2">
-        <div class="input-group">
-            <input type="search" class="form-control rounded" placeholder="Busque la batería que desee..." aria-label="Search" aria-describedby="search-addon" />
-            <button type="button" class="btn btn-outline-primary">Buscar</button>
-        </div>
-    </div>
+    
 </div>
