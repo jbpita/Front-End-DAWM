@@ -24,8 +24,8 @@
     <td class="text-center mob-hide "><a href="" class="trsn" title=""><img src="{{product.src}}" alt="" title=""></a></td>
     <td class="mob-hide"> <span class="order-product-price">{{product.precio | currency }}</span></td>
     <td>
-    <select class="select select-qty form-control" (change)="onChange($event,product)" id="{{product.id}}" title="Qty" >
-        <ng-container *ngFor='let in of counter(product.cantidad) ;let i = index'>
+    <select class="select select-qty form-control" (change)="onChange($event,product)" id="{{product.id_producto}}" title="Qty" >
+        <ng-container *ngFor='let in of counter(product.stock) ;let i = index'>
             <option *ngIf="i+1 == product.qty ; else foption"  value="{{i+1}}" selected= "true" >{{i+1}}</option>
             <ng-template #foption>
             <option  value="{{i+1}}" >{{i+1}}</option>

@@ -15,6 +15,8 @@ export class NavbarComponent implements OnInit {
   } = { option: [] }
   
   quantity!: number;
+  quantity2!: boolean;
+
 
   constructor(private router: Router, private shoppingCartSvc: ShoppingCartService,public authSvc:AuthService) { }
   ngOnInit(): void {
@@ -37,21 +39,27 @@ export class NavbarComponent implements OnInit {
         router: ['/', 'Contactanos'],
       }
     ]
-    this.getDataCart()
+    this.getDataCart();
+   
+    
   }
 
   irdireccion(direccion:string){
+ 
     this.router.navigate([direccion])
   }
   
   private getDataCart(): void {
+    
     this.shoppingCartSvc.quantityAction$
       .pipe(
-        tap((qty:number) => {this.quantity = qty})
+        tap((qty:number) => {this.quantity = qty;})
       )
       .subscribe()
   }
   onLogout(){
+    
+    
     this.authSvc.logout();
   }
 

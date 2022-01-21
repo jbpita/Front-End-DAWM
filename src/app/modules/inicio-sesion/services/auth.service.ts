@@ -5,6 +5,7 @@ import { catchError, map } from 'rxjs/operators';
 import { User, UserResponse } from 'src/app/core/models/user';
 import { environment } from 'src/environments/environment';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router } from '@angular/router';
 const helper = new JwtHelperService();
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ const helper = new JwtHelperService();
 export class AuthService {
   private loggeIn = new BehaviorSubject<boolean>(false);
 
-  constructor(private http:HttpClient) { 
-    this.checkToken
+  constructor(private http:HttpClient, private router:Router ) { 
+    this.checkToken()
   }
   get isLogged(): Observable<boolean>{
     return this.loggeIn.asObservable();
@@ -32,10 +33,11 @@ export class AuthService {
   logout(): void{
     localStorage.removeItem('token');
     this.loggeIn.next(false);
-    window.location.reload();
+    this.router.navigate(['/InicioSesion'])
   }
   private checkToken():void{
-    if(localStorage.getItem('token')){
+    console.log(this.loggeIn)
+    if(localStorage.getItem('token') != null){
       const userToken  = String(localStorage.getItem('token'));
       const isExpires = helper.isTokenExpired(userToken);
       console.log('isExpired-->',isExpires)
@@ -44,7 +46,12 @@ export class AuthService {
       }
       else{
         this.loggeIn.next(true);
+        console.log(localStorage.getItem('token'))
       }
+    }
+    else{
+      localStorage.removeItem('token');
+    this.loggeIn.next(false);
     }
     
   }
@@ -55,7 +62,7 @@ export class AuthService {
   private handlerError(err:any):Observable<never>{
     let errorMessage = "Error en la Data"
     if(err){
-      errorMessage = `Error: code ${err.message}`
+      errorMessage = `Error: code ${err.error.error}`
     }
     window.alert(errorMessage)
     return throwError(errorMessage)
