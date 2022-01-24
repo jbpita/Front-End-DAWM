@@ -5,11 +5,11 @@
           <h2>Te presentamos nuestros productos</h2>
       </div>
       <div class="row text-center">
-          <div *ngFor="let o of marcas.valor" class="col-lg-4 col-md-6">
+          <div *ngFor="let o of marcas" class="col-lg-4 col-md-6">
               <div class="marcas-item">
-                  <img src="{{o.srcM}}" alt="">
-                      <h3>{{o.h3M}}</h3>
-                      <p>{{o.pM}}</p>
+                  <img src="{{o.src}}" alt="">
+                      <h3>{{o.nombre}}</h3>
+                      <p>{{o.descripcion}}</p>
               </div>
           </div>
       </div>
