@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Marca } from 'src/app/core/models/marcas-model';
 import { MarcasService } from '../../services/marcas.service';
 import { tap } from 'rxjs/operators';
@@ -10,6 +10,8 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./buscadores.component.css']
 })
 export class BuscadoresComponent implements OnInit {
+  @Output() id_marca = new EventEmitter<number>();
+
   marcas: Marca[] = []
 
  constructor(private marcasServices:MarcasService) { }
@@ -25,9 +27,14 @@ export class BuscadoresComponent implements OnInit {
     .subscribe()
   }
   
-  presentar(id:number){
-    console.log(id)
-            
+  presentar(event:any,id_marca:number){
+    let marcas = Array.prototype.slice.call(document.getElementById("navproductos")?.getElementsByTagName("a"));
+    for (let marca of marcas) {
+      if ( event.target.innerHTML != marca.innerHTML) {
+          marca.classList.remove("active")
+      }
   }
-
+    event.target.classList.add("active")
+    this.id_marca.emit(id_marca)
+  }
 }

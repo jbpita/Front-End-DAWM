@@ -4,12 +4,12 @@
     <div class="section-header text-center">
         <h2>Productos Disponibles</h2>
     </div>
-    <app-buscadores>
+    <app-buscadores (id_marca)="buscadormarca($event)">
 
     </app-buscadores>
 
     <!-- Gallery -->
-    <app-pres-producto (addToCartClick)="addToCart($event)">
+    <app-pres-producto (addToCartClick)="addToCart($event)" [id_marcab]="id_marca">
 
     </app-pres-producto>
 
