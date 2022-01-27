@@ -12,6 +12,7 @@ const helper = new JwtHelperService();
 })
 export class AuthService {
   private loggeIn = new BehaviorSubject<boolean>(false);
+  private id_usuario = new BehaviorSubject<number>(0);
 
   constructor(private http:HttpClient, private router:Router ) { 
     this.checkToken()
@@ -19,12 +20,16 @@ export class AuthService {
   get isLogged(): Observable<boolean>{
     return this.loggeIn.asObservable();
   }
+  get idUser(): Observable<number>{
+    return this.id_usuario.asObservable();
+  }
   login(authData: User): Observable<any>{
     return this.http.post<UserResponse>(`${environment.API_URL}/login`,authData)
     .pipe(
       map((res:UserResponse) =>{
         this.saveToken(res.success);
         this.loggeIn.next(true);
+        this.id_usuario.next(res.id_usuario);
         return res;
       }),
       catchError((err)=> this.handlerError(err))

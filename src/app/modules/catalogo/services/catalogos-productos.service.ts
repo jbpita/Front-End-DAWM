@@ -17,10 +17,7 @@ export class CatalogosProductosService {
   getProductsB(id_marca:number): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.apiURl}/marca/${id_marca}`);
   }
-  updateStock(productId: number, stock: number): Observable<any> {
-    const body = { "stock": stock };
-    return this.http.patch<any>(`${this.apiURl}/${productId}`, body);
-  }
+  
 
   
 }
