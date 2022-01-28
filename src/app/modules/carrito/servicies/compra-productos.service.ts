@@ -46,4 +46,15 @@ export class CompraProductosService {
       }));
   }
 
+  enviarCorreo(correo:string): Observable<any> {
+    console.log(correo)
+    const body = { "correoUser": correo };
+    return this.http.post<any>(`${environment.API_URL}/correo`, body)
+    .pipe(
+      map((res) =>{
+        return res;
+      }));
+  }
+
+
 }

@@ -8,4 +8,5 @@ export interface UserResponse{
     success: string;
     role: Roles;
     id_usuario: number;
+    correoCliente:string;
 }

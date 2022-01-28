@@ -13,6 +13,7 @@ const helper = new JwtHelperService();
 export class AuthService {
   private loggeIn = new BehaviorSubject<boolean>(false);
   private id_usuario = new BehaviorSubject<number>(0);
+  private correoCliente = new BehaviorSubject<string>("");
 
   constructor(private http:HttpClient, private router:Router ) { 
     this.checkToken()
@@ -23,6 +24,10 @@ export class AuthService {
   get idUser(): Observable<number>{
     return this.id_usuario.asObservable();
   }
+  get correo(): Observable<string>{
+    return this.correoCliente.asObservable();
+  }
+
   login(authData: User): Observable<any>{
     return this.http.post<UserResponse>(`${environment.API_URL}/login`,authData)
     .pipe(
@@ -30,6 +35,7 @@ export class AuthService {
         this.saveToken(res.success);
         this.loggeIn.next(true);
         this.id_usuario.next(res.id_usuario);
+        this.correoCliente.next(res.correoCliente)
         return res;
       }),
       catchError((err)=> this.handlerError(err))

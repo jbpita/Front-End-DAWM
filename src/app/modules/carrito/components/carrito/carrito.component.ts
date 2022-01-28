@@ -25,13 +25,15 @@ export class CarritoComponent implements OnInit {
   formulario_tarjeta:boolean = true;
   total_compra:number 
   id_cliente: number;
-  
+  correo: string;
   constructor(private shoppingCartSvc: ShoppingCartService,private router: Router,private modal:NgbModal,public authSvc:AuthService,public compraPSvc:CompraProductosService) { }
 
   ngOnInit(): void {
     this.getDataCart();
     this.getTotal();
     this.getidCliente();
+    this.getCorreo();
+    
     this.pagoForm = new FormGroup(
       {
         num_tarjeta: new FormControl('', [
@@ -57,6 +59,14 @@ export class CarritoComponent implements OnInit {
     return new Array(i);
 }
 
+  private getCorreo():void{
+    this.authSvc.correo
+    .pipe(
+      tap((correo: string)=> this.correo = correo)
+    )
+    .subscribe();
+  }
+
   private getDataCart(): void {
     this.shoppingCartSvc.cartAction$
       .pipe(
@@ -64,6 +74,8 @@ export class CarritoComponent implements OnInit {
       )
       .subscribe();
   }
+
+  
   private getTotal():void{
     this.shoppingCartSvc.totalAction$
     .pipe(
@@ -195,7 +207,17 @@ export class CarritoComponent implements OnInit {
       })
     ).subscribe();}
     this.actualizarStock();
+    this.enviarCorreo();
     modal.close();
+  
+
+
+  }
+
+  private enviarCorreo(){
+    this.compraPSvc.enviarCorreo(this.correo).pipe(
+      tap(res=>console.log(res))
+    ).subscribe()
   }
 
   private actualizarStock(){
