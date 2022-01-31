@@ -16,7 +16,6 @@ import { UserComponent } from './user/user.component';
 import { SharedModule } from '../shared/shared.module';
 
 
-
 @NgModule({
   declarations: [
     AdmiConsoleComponent,
@@ -28,14 +27,14 @@ import { SharedModule } from '../shared/shared.module';
     StadisticComponent,
     FormMarcaComponent,
     GraphicStadisticComponent,
-    UserComponent
+    UserComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    GoogleChartsModule 
+    GoogleChartsModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   exports: [

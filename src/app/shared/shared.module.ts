@@ -7,11 +7,13 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 
 
 
+
 @NgModule({
   declarations: [
     NavbarComponent,
     FooterComponent,
-    CarouselComponent
+    CarouselComponent,
+    
   ],
   imports: [
     CommonModule,

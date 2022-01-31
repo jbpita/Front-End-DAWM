@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-equipo',
-  templateUrl: './equipo.component.html',
-  styleUrls: ['./equipo.component.css']
+  selector: 'app-teams',
+  templateUrl: './teams.component.html',
+  styleUrls: ['./teams.component.css']
 })
-export class EquipoComponent implements OnInit {
+export class TeamsComponent implements OnInit {
+
   equipo:{
     valor:Array<any>
   }= {valor: []}

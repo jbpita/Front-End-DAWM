@@ -4,7 +4,7 @@ export interface Product {
     nombre: string,
     tipo: number,
     precio: number,
-    detalle:  String[]
+    detalle:  String[],
     src: string,
     cantidad: number,
     qty: number;

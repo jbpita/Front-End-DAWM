@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="head">
+        <h1>Carrito de compras</h1>
+    </div>
+    <!-- Cart Table -->
+    <div class="row">
+        <div class="col-lg-12 table">
+            <form id="cart-update-form" method="post" action="">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th class="mob-hide"></th>
+                                <th class="mob-hide">Precio Unidad</th>
+                                <th class="table-qty">Cantidad</th>
+                                <th>Subtotal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr  *ngFor="let product of cart" >
+                                <td><h3>{{product.nombre}}</h3></td>
+    <td class="text-center mob-hide "><a href="" class="trsn" title=""><img src="{{product.src}}" alt="" title=""></a></td>
+    <td class="mob-hide"> <span class="order-product-price">{{product.precio | currency }}</span></td>
+    <td>
+    <select class="select select-qty form-control" (change)="onChange($event,product)" id="{{product.id}}" title="Qty" >
+        <ng-container *ngFor='let in of counter(product.cantidad) ;let i = index'>
+            <option *ngIf="i+1 == product.qty ; else foption"  value="{{i+1}}" selected= "true" >{{i+1}}</option>
+            <ng-template #foption>
+            <option  value="{{i+1}}" >{{i+1}}</option>
+            </ng-template>
+        </ng-container>
+    </select>
+
+    </td>
+        <td><span class="order-product-subtotal">{{ product.qty * product.precio | currency }}</span></td>
+        <td clas="text-right"> <a  (click)="removerProducto(product)" class="cart-product-remove" title="Remove Product"><i class="fas fa-times-circle"></i></a></td>
+
+                                
+                            </tr>                                
+                        </tbody>
+                    </table>
+                </div>
+                <input type="hidden"></form>
+            <hr class="my-3">
+        </div>
+        <div class="col-lg-12 total">
+            <div class="row">
+                <div class="col-12 cart-totals">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr class="totals key">
+                                <td colspan="1" class="text-left"><strong>Total</strong></td>
+                                <td colspan="1" class="text-right"><strong>{{ total$ | async | currency }}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="row text-center cart-actions">
+                        <div class="col-lg-6 col-md-6 actualizar">
+                            <a class="btn btn-primary btn-block actualizar-compra" title="Proceed to Checkout">Actualizar</a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 ">
+                            <a class="btn btn-primary btn-block" title="Proceed to Checkout ">Procede a realizar la compra</a>
+                        </div>
+                        <a class="btn btn-link btn-block " title="← Continue Shopping ">← Continue Shopping</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

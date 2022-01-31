@@ -33,13 +33,36 @@ export class ShoppingCartService {
     }
     
   }
-
-  resetCart(): void {
-    this.cartSubject.next([]);
-    this.totalSubject.next(0);
-    this.quantitySubject.next(0);
-    this.products = [];
+  
+  updateProduct(product: Product, qty: number): void {
+    let cone:boolean = this.updatetoProduct(product,qty);
+    if(cone){
+      this.quantityProducts();
+      this.calcTotal();
+    }
   }
+  
+  removeCart(product: Product): void {
+    let cone:boolean = this.removetoProduct(product);
+    if(cone){
+      this.quantityProducts();
+      this.calcTotal();
+    }
+  }
+
+  private updatetoProduct(product: Product, qty: number): boolean {
+    let isProductInCart = this.products.find(({ id }) => id === product.id)
+    if (isProductInCart) {
+      isProductInCart.qty = qty;
+    }
+    return true;
+}
+
+  private removetoProduct(product: Product): boolean {
+    let i = this.products.findIndex(({ id }) => id === product.id)
+    this.products.splice( i, 1 );
+    return true;
+}
 
   private addToCart(product: Product): boolean {
     let isProductInCart = this.products.find(({ id }) => id === product.id)
@@ -69,6 +92,7 @@ export class ShoppingCartService {
     const total = this.products.reduce((acc, prod) => acc += (prod.precio * prod.qty), 0);
     this.totalSubject.next(total);
   }
+  
 
   constructor() { }
 }
