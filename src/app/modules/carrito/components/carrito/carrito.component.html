@@ -24,8 +24,8 @@
     <td class="text-center mob-hide "><a href="" class="trsn" title=""><img src="{{product.src}}" alt="" title=""></a></td>
     <td class="mob-hide"> <span class="order-product-price">{{product.precio | currency }}</span></td>
     <td>
-    <select class="select select-qty form-control" (change)="onChange($event,product)" id="{{product.id}}" title="Qty" >
-        <ng-container *ngFor='let in of counter(product.cantidad) ;let i = index'>
+    <select class="select select-qty form-control" (change)="onChange($event,product)" id="{{product.id_producto}}" title="Qty" >
+        <ng-container *ngFor='let in of counter(product.stock) ;let i = index'>
             <option *ngIf="i+1 == product.qty ; else foption"  value="{{i+1}}" selected= "true" >{{i+1}}</option>
             <ng-template #foption>
             <option  value="{{i+1}}" >{{i+1}}</option>
@@ -58,13 +58,12 @@
                     </table>
 
                     <div class="row text-center cart-actions">
-                        <div class="col-lg-6 col-md-6 actualizar">
-                            <a class="btn btn-primary btn-block actualizar-compra" title="Proceed to Checkout">Actualizar</a>
+                        <div class="col-lg-6 col-md-6 ">
+                            <a class="btn btn-primary btn-block" (click)="irdireccion()" title="Continuar Comprando">Continuar Comprando </a>
                         </div>
                         <div class="col-lg-6 col-md-6 ">
-                            <a class="btn btn-primary btn-block" title="Proceed to Checkout ">Procede a realizar la compra</a>
+                            <a class="btn btn-primary btn-block" (click)="openCentrado(contenido,contenido2)" title="Procede a realizar la compra ">Proceder a realizar la compra</a>
                         </div>
-                        <a class="btn btn-link btn-block " title="← Continue Shopping ">← Continue Shopping</a>
                     </div>
                 </div>
             </div>
@@ -72,3 +71,66 @@
 
     </div>
 </div>
+
+<ng-template  #contenido let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title fw-bolder">Mensaje para proceder a comprar</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Tienes que Iniciar Sesión para proceder a comprar los artículos escogidos.</p>
+        </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success btn-primary " (click)="modal.close()">Ok!</button>
+    </div>
+</ng-template>
+<ng-template  #contenido2 let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title fw-bolder">Compra de artículos</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" (click)="presentar(false)" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Pago Efectivo
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" (click)="presentar(true)"  type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Pago con Tarjeta 
+            </label>
+        </div>
+            <form [formGroup]="pagoForm" *ngIf="formulario_tarjeta">
+                <div>               
+                     <h5 class="fw-bolder pb-3" >Datos de la Tarjeta de Credito</h5>
+                </div>
+                <div class="form-outline ">
+                  <input type="num_tarjeta"
+                    formControlName ="num_tarjeta"
+                   id="num_tarjeta" class="form-control form-control-lg" />
+                  <label class="form-label" for="num_tarjeta" >Numero de Tarjeta de Credito</label>
+                </div>
+                <div class="form-outline ">
+                  <input type="cvv"
+                  formControlName ="cvv"
+                   id="cvv" class="form-control form-control-lg" />
+                  <label class="form-label" for="cvv" >CVV</label>
+                </div>
+                <div class="form-outline ">
+                    <input type="tiempo_expiracion"
+                    formControlName ="tiempo_expiracion"
+                     id="tiempo_expiracion" class="form-control form-control-lg" />
+                    <label class="form-label" for="tiempo_expiracion" >Tiempo de expiración </label>
+                  </div>
+              </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success btn-primary" (click)="confirmarcompra(modal)" [disabled]="pagoForm.invalid && formulario_tarjeta ">Confirmar Compra</button>
+    </div>
+</ng-template>

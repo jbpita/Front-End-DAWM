@@ -7,4 +7,6 @@ export interface UserResponse{
     message: string;
     success: string;
     role: Roles;
+    id_usuario: number;
+    correoCliente:string;
 }

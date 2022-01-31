@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CuerpoComponent } from './modules/cuerpo/cuerpo/cuerpo.component';
+import { ChechLoginGuard } from './shared/guards/chech-login.guard';
 
 
 const routes: Routes = [
@@ -11,8 +12,10 @@ const routes: Routes = [
   },
   {
     path:'InicioSesion',
-      loadChildren:() => import('./modules/inicio-sesion/inicio-sesion.module').then( m => m.InicioSesionModule) 
+      loadChildren:() => import('./modules/inicio-sesion/inicio-sesion.module').then( m => m.InicioSesionModule),
+      canActivate:[ChechLoginGuard] 
   },
+
 ];
 
 @NgModule({

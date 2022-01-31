@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { Product } from 'src/app/core/models/product-model';
@@ -9,7 +10,7 @@ import { ShoppingCartService } from 'src/app/shared/services/shopping-cart-servi
   styleUrls: ['./catalogo.component.css']
 })
 export class CatalogoComponent implements OnInit {
-
+  id_marca:number = 0
   productV!: Product[]  
 
   constructor(private shoppingCartSvc:ShoppingCartService) { }
@@ -41,7 +42,9 @@ export class CatalogoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  buscadormarca(id_marca:number):void{
+    this.id_marca = id_marca
+  }
   addToCart(product: Product): void {
     console.log('Add to cart', product);
     this.shoppingCartSvc.updateCart(product);

@@ -86,3 +86,15 @@ margin-bottom: 1rem;
 .text-right {
     text-align: right!important;
 }
+.modal-title{
+    font-size: 25px;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: #E81C2E;
+}
+.pb-3 {
+    padding-top: 1rem!important;
+    color: #0F3460;
+    font-weight: 500;
+}
+

@@ -51,7 +51,7 @@ export class ShoppingCartService {
   }
 
   private updatetoProduct(product: Product, qty: number): boolean {
-    let isProductInCart = this.products.find(({ id }) => id === product.id)
+    let isProductInCart = this.products.find(({ id_producto }) => id_producto === product.id_producto)
     if (isProductInCart) {
       isProductInCart.qty = qty;
     }
@@ -59,16 +59,16 @@ export class ShoppingCartService {
 }
 
   private removetoProduct(product: Product): boolean {
-    let i = this.products.findIndex(({ id }) => id === product.id)
+    let i = this.products.findIndex(({ id_producto }) => id_producto === product.id_producto)
     this.products.splice( i, 1 );
     return true;
 }
 
   private addToCart(product: Product): boolean {
-    let isProductInCart = this.products.find(({ id }) => id === product.id)
+    let isProductInCart = this.products.find(({ id_producto }) => id_producto === product.id_producto)
     
     if (isProductInCart) {
-      if(isProductInCart!.qty<product.cantidad){
+      if(isProductInCart!.qty<product.stock){
         console.log("suma en objeto")
         isProductInCart.qty += 1;
       }
@@ -80,6 +80,8 @@ export class ShoppingCartService {
       this.products.push({ ...product, qty: 1 })
     }
     this.cartSubject.next(this.products);
+    console.log(this.cartSubject)
+    console.log(this.products)
     return true;
   }
 

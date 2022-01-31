@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Marca } from 'src/app/core/models/marcas-model';
 import { MarcasService } from '../../services/marcas.service';
 import { tap } from 'rxjs/operators';
@@ -10,36 +10,31 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./buscadores.component.css']
 })
 export class BuscadoresComponent implements OnInit {
-  marcas: Marca[] = [{
-    id:1,
-    nombre: "Bosch",
-    descripcion: "hola"
-  },{
-    id:2,
-    nombre: "Dacar",
-    descripcion: "hola"
-  },{
-    id:2,
-    nombre: "Mac",
-    descripcion: "hola"
-  }]
+  @Output() id_marca = new EventEmitter<number>();
 
-  //marcas!: Marca[]
- /* constructor(private marcasServices:MarcasService) { }*/
- constructor() { }
+  marcas: Marca[] = []
+
+ constructor(private marcasServices:MarcasService) { }
   ngOnInit(): void {
-    console.log(this.marcas)
-    /*cargarmarcas()*/
+    this.cargarmarcas()
   }
-  /*
+  
   private cargarmarcas(){
     this.marcasServices.getMarcas()
     .pipe(
-      tap((marcas: Marca[]) => this.marcas = marcas))
+      tap((marcas: Marca[]) => {this.marcas = marcas
+      console.log(this.marcas)}))
     .subscribe()
-  }*/
-  presentar(){
-    console.log("hola")
   }
-
+  
+  presentar(event:any,id_marca:number){
+    let marcas = Array.prototype.slice.call(document.getElementById("navproductos")?.getElementsByTagName("a"));
+    for (let marca of marcas) {
+      if ( event.target.innerHTML != marca.innerHTML) {
+          marca.classList.remove("active")
+      }
+  }
+    event.target.classList.add("active")
+    this.id_marca.emit(id_marca)
+  }
 }
