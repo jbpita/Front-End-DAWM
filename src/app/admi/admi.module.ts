@@ -14,6 +14,8 @@ import { FormMarcaComponent } from './form-marca/form-marca.component';
 import { GraphicStadisticComponent } from './graphic-stadistic/graphic-stadistic.component';
 import { UserComponent } from './user/user.component';
 import { SharedModule } from '../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ListaProductosComponent } from './lista-productos/lista-productos.component';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { SharedModule } from '../shared/shared.module';
     FormMarcaComponent,
     GraphicStadisticComponent,
     UserComponent,
+    ListaProductosComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +38,7 @@ import { SharedModule } from '../shared/shared.module';
     ReactiveFormsModule,
     RouterModule,
     GoogleChartsModule,
+    HttpClientModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   exports: [

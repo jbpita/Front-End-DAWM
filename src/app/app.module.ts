@@ -14,6 +14,7 @@ import { UserComponent } from './admi/user/user.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { ListaProductosComponent } from './admi/lista-productos/lista-productos.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AppRoutingModule } from './app-routing.module';
         {path: 'form-product', component:  FormProductoComponent},
         {path: 'form-marca', component:  FormMarcaComponent},
         {path: 'stadistic' , component: StadisticComponent},
-        {path: 'user' , component: UserComponent}
+        {path: 'user' , component: UserComponent},
+        {path: 'list-product' , component: ListaProductosComponent}
       ]}
     ])
   ],

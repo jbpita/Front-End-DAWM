@@ -21,7 +21,7 @@
                         <tbody>
                             <tr  *ngFor="let product of cart" >
                                 <td><h3>{{product.nombre}}</h3></td>
-    <td class="text-center mob-hide "><a href="" class="trsn" title=""><img src="{{product.src}}" alt="" title=""></a></td>
+    <td class="text-center mob-hide "><a href="" class="trsn" title=""><img src="http://localhost:3001/{{product.src}}" alt="" title=""></a></td>
     <td class="mob-hide"> <span class="order-product-price">{{product.precio | currency }}</span></td>
     <td>
     <select class="select select-qty form-control" (change)="onChange($event,product)" id="{{product.id_producto}}" title="Qty" >
