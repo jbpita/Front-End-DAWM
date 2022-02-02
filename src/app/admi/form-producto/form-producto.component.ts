@@ -69,12 +69,5 @@ export class FormProductoComponent implements OnInit {
     console.warn(JSON.stringify(this.registerProduct.value));
     
   }
-
-  capturaFile(event): any{
-    let archivoCapturado = event.target.files[0];
-    this.archivo.push(archivoCapturado);
-
-    console.log(event);
-  }
 }
  
