@@ -1,0 +1,191 @@
+/*******************************/
+
+
+/********* Contact-Heading CSS *********/
+
+
+/*******************************/
+
+.contact-heading {
+    background-image: url(/assets/img/contact/contact-heading.jpg);
+}
+
+.page-heading {
+    padding: 210px 0px 130px 0px;
+    text-align: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-heading .text-content h4 {
+    color: #E81C2E;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.page-heading .text-content h2 {
+    color: #fff;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.section-heading {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: 28px;
+    font-weight: 400;
+    font: Poppins, sans-serif 28px;
+    color: #1E1E1E;
+    margin-bottom: 15px;
+}
+
+
+
+/*******************************/
+
+
+/********* Ubicanos CSS *********/
+
+
+/*******************************/
+
+.ubicanos {
+    margin-top: 100px;
+}
+
+.ubicanos h4 {
+    font-size: 20px;
+    color: #1A6692;
+    margin-bottom: 20px;
+}
+
+.ubicanos .right-content {
+    margin-left: 20px;
+}
+
+.ubicanos p {
+    padding-bottom: 30px;
+}
+
+.ubicanos .social-icons {
+    border-bottom: 1px solid #eee;
+}
+
+ul.social-icons li {
+    display: inline-block;
+    align-items: center;
+}
+
+ul.social-icons li:last-child {
+    margin-right: 0px;
+}
+
+ul.social-icons li a {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    line-height: 50px;
+    background-color: #1E1E1E;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    transition: all .3s;
+    border-radius: 40px;
+}
+
+ul.social-icons li a:hover {
+    background-color: #E81C2E;
+    color: #fff;
+}
+
+.section-heading h2 {
+    font-size: 28px;
+    font-weight: 400;
+    font: Poppins, sans-serif 28px;
+    color: #1E1E1E;
+    margin-bottom: 15px;
+}
+
+
+/*******************************/
+
+
+/********** Boton nosotros ***********/
+
+
+/*******************************/
+
+.services .container {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    background-color: transparent;
+    padding: 100px ;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.services h2 {
+    color: #1B1A17;
+    text-align: end;
+    font-size: 50px;
+}
+
+.services {
+    background-image: url(/assets/img/fondo-boton.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 70px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.services .service-item {
+    text-align: center;
+}
+
+.services .service-item .icon {
+    background-color: #1B1A17;
+    padding: 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px
+}
+
+.services .service-item .icon i {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    text-align: center;
+    line-height: 100px;
+    background-color: #f7f7f7;
+    color: #1B1A17;
+    font-size: 32px;
+    border-radius: 30px;
+}
+
+.services .service-item .down-content {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    margin-bottom: 15px;
+}
+
+.services .service-item .down-content h4 {
+    font-size: 17px;
+    color: #1A6692;
+    margin-bottom: 20px;
+}
+
+.services .service-item .down-content p {
+    margin-bottom: 25px;
+    color: #1E1E1E;
+}
