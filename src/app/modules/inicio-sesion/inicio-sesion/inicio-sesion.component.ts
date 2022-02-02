@@ -44,7 +44,7 @@ export class InicioSesionComponent implements OnInit, OnDestroy {
             this.router.navigate([''])
           }
           if(res.role == "admin"){
-            this.router.navigate(['/Admin'])
+            this.router.navigate(['/admi-console'])
           }
         }
       }
