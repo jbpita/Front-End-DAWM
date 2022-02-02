@@ -25,4 +25,8 @@ export class ProductosService {
   update(producto : Product): Observable<ResponceUpdate>{
     return this.http.put<ResponceUpdate>(this.apiURl, producto ,{responseType: 'json'})
   }
+  
+  postProducts(Product:any): Observable<any> {
+    return this.http.post<any>(this.apiURl,Product);
+  }
 }

@@ -17,7 +17,7 @@
 
         <div class="mb-3">
             <label for="stock" class="form-label">Stock</label>
-            <textarea class="form-control" id="stock" formControlName="stock" rows="4"></textarea>
+            <input type="number" class="form-control" id="stock" formControlName="stock" >
         </div>
 
         <div class="input-group mb-3">
@@ -27,8 +27,12 @@
         </div>
         <div>
             <label for="file-image" class="form-label">FOTO</label>
-            <input (change)="capturaFile(event)"class="form-control form-control-lg" id="file-image" type="file" formControlName="src">
+            <input type="file" class="form-control-file" accept="image/*" name="image" formControlName="src"
+            (change)="selectImage($event)">            
         </div>
+                  <div class="mb-4">
+                    <img class="img-fluid" [src]="imgURL" class="card-img-top">
+                  </div>
         <div>
             <label></label>
             <input class="form-control form-control-lg btn btn-dark" id="file-image" type="submit">
