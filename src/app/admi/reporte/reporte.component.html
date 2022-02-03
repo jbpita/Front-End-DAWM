@@ -1,0 +1,29 @@
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id Compra</th>
+        <th scope="col">Id Producto</th>
+        <th scope="col">Compra</th>
+        <th scope="col">Precio</th>
+        <th scope="col">fecha</th>
+        <th scope="col">Id Cliente</th>
+        <th scope="col">Nombre Cliente</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let element of reporte">
+        <tr>
+            
+                <td>{{element.id_compra}}</td>
+                <td>{{element.id_producto}}</td> 
+                <td>{{element.cantidad_compra}}</td>
+                <td>{{element.precio_producto}}</td>
+                <td>{{element.total}}</td>
+                <td>{{element.fecha_compra}}</td>
+                <td>{{element.id_cliente}}</td>
+                <td>{{element.nombre_cliente}}</td>
+        </tr>
+      </ng-container>>
+  </tbody>
+</table>

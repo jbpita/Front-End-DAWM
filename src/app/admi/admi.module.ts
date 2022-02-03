@@ -16,6 +16,7 @@ import { UserComponent } from './user/user.component';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ListaProductosComponent } from './lista-productos/lista-productos.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ListaProductosComponent } from './lista-productos/lista-productos.compo
     GraphicStadisticComponent,
     UserComponent,
     ListaProductosComponent,
+    ReporteComponent,
   ],
   imports: [
     CommonModule,

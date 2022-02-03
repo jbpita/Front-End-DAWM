@@ -35,5 +35,11 @@ export const side_option = [
         icon: "bi bi-list-ol",
         name: "Lista de Productos",
         path: "list-product"
+    },
+    {
+        id: 6,
+        icon: "bi bi-list-ol",
+        name: "Lista de Productos",
+        path: "reporte"
     }
 ]

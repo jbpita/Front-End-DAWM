@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Marca } from 'src/app/core/models/marcas-model';
+import { MarcaRegistro , ResponceUpdate} from '../marcas.model';
 import { Observable } from 'rxjs';
 
 
@@ -13,5 +14,9 @@ export class MarcasService {
   
   getMarcas(): Observable<Marca[]>{
     return this.http.get<Marca[]>(this.apiURl);
+  }
+  
+  postMarcas(marca:any): Observable<any> {
+    return this.http.post<any>(this.apiURl,marca);
   }
 }

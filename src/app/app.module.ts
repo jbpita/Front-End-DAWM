@@ -15,6 +15,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { ListaProductosComponent } from './admi/lista-productos/lista-productos.component';
+import { ReporteComponent }  from './admi/reporte/reporte.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ListaProductosComponent } from './admi/lista-productos/lista-productos.
         {path: 'form-marca', component:  FormMarcaComponent},
         {path: 'stadistic' , component: StadisticComponent},
         {path: 'user' , component: UserComponent},
-        {path: 'list-product' , component: ListaProductosComponent}
+        {path: 'list-product' , component: ListaProductosComponent},
+        {path: 'reporte' , component: ReporteComponent}
       ]}
     ])
   ],
