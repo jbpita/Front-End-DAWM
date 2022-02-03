@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { tap } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 import { ContactanosModule } from '../../contactanos.module';
 import { ContactanosService } from '../../servicio/contactanos.service';
 
@@ -108,7 +109,19 @@ export class FormComponent implements OnInit {
     formData.append('mensaje', mensaje);
     console.log(this.contactanosForm.value)
     this.formService.postContactanos(formData).pipe(
-      tap((res) =>(console.log(res)))
+      
+      
+      tap((res) => console.log(res,  Swal.fire({
+        icon: 'success',
+        title: 'Mensaje Enviado!!',
+        text: 'Su mensaje ha sido enviado a unos de nuestros administradores dentro de la empresa.'
+        }).then((result) => {
+                    if (result) {
+                               location.reload();
+                  }
+       }) 
+ ))
+    
     )
     
   }

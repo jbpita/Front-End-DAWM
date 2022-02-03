@@ -10,6 +10,7 @@ import { MetodoPago } from 'src/app/core/models/metodoPago-model';
 import { Product } from 'src/app/core/models/product-model';
 import { AuthService } from 'src/app/modules/inicio-sesion/services/auth.service';
 import { ShoppingCartService } from 'src/app/shared/services/shopping-cart-service.service';
+import Swal from 'sweetalert2';
 import { CompraProductosService } from '../../servicies/compra-productos.service';
 
 @Component({
@@ -216,7 +217,17 @@ export class CarritoComponent implements OnInit {
 
   private enviarCorreo(){
     this.compraPSvc.enviarCorreo(this.correo).pipe(
-      tap(res=>console.log(res))
+      
+      tap((res) => console.log(res,  Swal.fire({
+        icon: 'success',
+        title: 'Compra Realizada!!',
+        text: 'Puede Puede acercarse a nuestros locales para realizar el respectivo pago y retiras su producto o contactarnos para llevar su pedido a domicilio. a nuestros locales '
+        }).then((result) => {
+                    if (result) {
+                               location.reload();
+                  }
+       }) 
+ ))
     ).subscribe()
   }
 
