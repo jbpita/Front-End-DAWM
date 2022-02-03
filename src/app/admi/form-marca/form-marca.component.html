@@ -1,17 +1,25 @@
-<div class="mb-3">
-    <label for="nommbre-marca" class="form-label">NORMBRE</label>
-    <input type="text" class="form-control" id="nommbre-marca" placeholder="Ingrese el nombre del producto">
-</div>
-<div class="mb-3">
-    <label for="descripcion-marca" class="form-label">DESCRICION</label>
-    <textarea class="form-control" id="descripcion-marca" rows="4"></textarea>
-</div>
+<form  [formGroup]="registerMarca" (ngSubmit)="onSubmit()">
 
-<div>
-    <label for="file-image" class="form-label">FOTO</label>
-    <input class="form-control form-control-lg" id="file-image" type="file">
-</div>
-<div>
-    <label></label>
-    <input class="form-control form-control-lg btn btn-dark" id="file-image" type="submit">
-</div>
+    <div class="mb-3">
+        <label for="nommbre-marca" class="form-label">NORMBRE</label>
+        <input type="text" formControlName="nombre" class="form-control" id="nommbre-marca" placeholder="Ingrese el nombre del producto">
+    </div>
+    <div class="mb-3">
+        <label for="descripcion-marca" class="form-label">DESCRICION</label>
+        <textarea formControlName="detalle" class="form-control" id="descripcion-marca" rows="4"></textarea>
+    </div>
+
+    <div>
+        <label for="file-image" class="form-label">FOTO</label>
+        <input type="file" class="form-control-file" accept="image/*" name="image" formControlName="src"
+        (change)="selectImage($event)"> 
+    </div>
+    <div class="mb-2">
+        <img class="img-fluid" [src]="imgURL" class="card-img-top">
+    </div>
+    <div>
+        <label></label>
+        <input class="form-control form-control-lg btn btn-dark" id="file-image" type="submit">
+    </div>
+    
+</form>

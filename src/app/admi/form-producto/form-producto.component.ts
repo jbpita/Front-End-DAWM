@@ -88,7 +88,8 @@ export class FormProductoComponent implements OnInit {
       tap((res) => console.log(res)))
     .subscribe()    
   }
-selectImage(event:any) {
+
+  selectImage(event:any) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       console.log(file)
@@ -101,6 +102,6 @@ selectImage(event:any) {
       this.images = file;
     }
   }
-
+  
 }
  

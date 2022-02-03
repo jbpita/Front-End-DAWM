@@ -27,8 +27,9 @@
         </div>
         <div>
             <label for="file-image" class="form-label">FOTO</label>
+
             <input type="file" class="form-control-file" accept="image/*" name="image" formControlName="src"
-            (change)="selectImage($event)">            
+            (change)="selectImage($event)">       
         </div>
                   <div class="mb-4">
                     <img class="img-fluid" [src]="imgURL" class="card-img-top">

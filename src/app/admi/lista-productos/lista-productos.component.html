@@ -26,44 +26,43 @@
           <td>{{producto.detalle}}</td>
           <td class="text-center align-middle">{{producto.stock}}</td>
           <td class="text-center align-middle"><button (click)="Delete(producto.id_producto)"><i class="bi bi-x-circle"></i></button></td>  
-          <td class="text-center align-middle"><button (click)="setIdPrecio(producto.id_producto) "type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-arrow-repeat"></i></button></td>                  
+          <td class="text-center align-middle"><button (click)="openModal(contenido,producto.id_producto)" type="button" class="btn btn-primary"><i class="bi bi-arrow-repeat"></i></button></td>                  
         </tr>
       </ng-container>>
   </tbody>
 </table>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar producto</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+<ng-template  #contenido let-modal>
+        <div class="modal-header">
+          <h5 class="modal-title" >Editar producto</h5>
+          <button type="button" class="close" aria-label="close" (click)="modal.dismiss()">
+            <span>X</span>
+          </button>
+        </div>
+        <form [formGroup]="updateProduct" (ngSubmit)="Update()">
+          <div class="modal-body">
+              <div class="mb-3">
+                  <label for="nommbre-producto" class="form-label">NORMBRE</label>
+                  <input type="text" class="form-control" id="nommbre-producto" formControlName="nombre" placeholder="Ingrese el nombre del producto">
+              </div>
+              
+              <div class="mb-3">
+                  <label for="descripcion-producto" class="form-label">DESCRICION</label>
+                  <textarea class="form-control" id="descripcion-producto" formControlName="detalle" rows="4"></textarea>
+              </div>
       
-      <div class="modal-body">
-          <div class="mb-3">
-              <label for="nommbre-producto" class="form-label">NORMBRE</label>
-              <input [(ngModel)]="nombre" type="text" class="form-control" id="nommbre-producto" formControlName="nombre" placeholder="Ingrese el nombre del producto">
+              <div class="input-group mb-3">
+                  <span class="input-group-text">Precio: $</span>
+                  <input type="number" class="form-control" aria-label="0" formControlName="precio">
+              </div>
+              <div>
+                  <label for="stock" class="form-label">Stock</label>
+                  <input class="form-control form-control-lg" id="stock" type="number" formControlName="stock">
+              </div>
           </div>
-          
-          <div class="mb-3">
-              <label for="descripcion-producto" class="form-label">DESCRICION</label>
-              <textarea [(ngModel)]="detalle" class="form-control" id="descripcion-producto" formControlName="detalle" rows="4"></textarea>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="modal.close()">Cerrar</button>
+            <button type="button" class="btn btn-primary" (click)="Update()">Guardar</button>
           </div>
-  
-          <div class="input-group mb-3">
-              <span class="input-group-text">Precio: $</span>
-              <input [(ngModel)]="precio" type="number" class="form-control" aria-label="0" formControlName="precio">
-          </div>
-          <div>
-              <label for="stock" class="form-label">Stock</label>
-              <input [(ngModel)]="stock" class="form-control form-control-lg" id="stock" type="number" formControlName="stock">
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" (click)="Update()">Guardar</button>
-      </div>
-    </div>
-  </div>
-</div>
+        </form>
+</ng-template>
