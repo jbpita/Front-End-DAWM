@@ -32,6 +32,7 @@ export class AuthService {
     return this.http.post<UserResponse>(`${environment.API_URL}/login`,authData)
     .pipe(
       map((res:UserResponse) =>{
+        console.log(res)
         this.saveToken(res.success);
         this.loggeIn.next(true);
         this.id_usuario.next(res.id_usuario);
